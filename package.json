@@ -1,0 +1,38 @@
+{
+  "name": "nodejs-github-bot",
+  "version": "1.0.0-beta1",
+  "description": "Node.js GitHub Bot",
+  "scripts": {
+    "start": "node server.js | bunyan -o short",
+    "test": "STATUS=0; tap --no-check-coverage test/**/*.test.js || STATUS=$?; standard || STATUS=$?; exit $STATUS",
+    "test:watch": "nodemon -q -x 'npm test'"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
+  },
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^19.0.13",
+    "aigle": "^1.14.1",
+    "basic-auth": "^2.0.1",
+    "body-parser": "^1.20.2",
+    "bunyan": "^1.8.1",
+    "bunyan-middleware": "1.0.2",
+    "codeowners-utils": "^1.0.2",
+    "debug": "^4.3.4",
+    "dotenv": "^16.3.1",
+    "events-async": "^1.2.1",
+    "express": "^4.18.2",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "eventsource": "^2.0.2",
+    "fetch-mock": "^9.11.0",
+    "nock": "^13.4.0",
+    "nodemon": "^3.0.2",
+    "standard": "^17.1.0",
+    "supertest": "^6.3.3",
+    "tap": "^16.3.8"
+  }
+}
